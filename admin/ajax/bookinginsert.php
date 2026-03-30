@@ -1,7 +1,6 @@
 <?php
 include('../connection.php');
-// echo "hello";
-// die();
+
 // use PHPMailer\PHPMailer\PHPMailer;
 // use PHPMailer\PHPMailer\Exception;
 
@@ -32,17 +31,17 @@ $msg2= "";
             echo 1;
         }
         if($msg2==1){
-          $mail=new PHPMailer(true);
+          // $mail=new PHPMailer(true);
       
           $mail->isSMTP();
           $mail->Host='smtp.gmail.com';
           $mail->SMTPAuth=true;
-          $mail->Username='admin@gmail.com';
-          $mail->Password='hxzzrjucljdiccnh';
+          $mail->Username=$email_user;
+          $mail->Password=$email_pass;
           $mail->SMTPSecure='ssl';
           $mail->Port=465;
       
-          $mail->setFrom('admin@gmail.com');
+          $mail->setFrom($email_user);
       
           $mail->addAddress($bookingemail);
       
